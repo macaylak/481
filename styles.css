@@ -1,0 +1,418 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Root variables for themes */
+  :root {
+    --background-color: #FFFFFF;
+    --text-color: #242424;
+    --secondary-text-color: #8B8E98;
+    --border-color: #e5e5e5;
+    --button-bg: linear-gradient(180deg, rgb(56, 56, 56) 0%, rgb(36, 36, 36) 66%, rgb(41, 41, 41) 100%);
+    --button-hover-bg: rgb(26, 25, 25);
+    --remove-btn-color: #FF4D4D;
+    --remove-btn-hover-color: #D93636;
+    --input-bg: #F2F2F2;
+    --modal-bg: #FFFFFF;
+    --discount-input-bg: #FFFFFF;
+    --toggle-bg: #363636;
+    --toggle-hover-bg: #1B1B1B;
+  }
+  
+  /* Dark theme variables */
+  body.dark-mode {
+    --background-color: #1E1E1E;
+    --text-color: #FFFFFF;
+    --secondary-text-color: #A9A9A9;
+    --border-color: #444444;
+    --button-bg: linear-gradient(180deg, rgb(80, 80, 80) 0%, rgb(60, 60, 60) 66%, rgb(65, 65, 65) 100%);
+    --button-hover-bg: rgb(50, 50, 50);
+    --remove-btn-color: #FF6B6B;
+    --remove-btn-hover-color: #FF4C4C;
+    --input-bg: #333333;
+    --modal-bg: #2C2C2C;
+    --discount-input-bg: #333333;
+    --toggle-bg: #555555;
+    --toggle-hover-bg: #333333;
+  }
+  
+  /* Body Styling */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Dark Mode Toggle Button */
+  .dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s;
+    z-index: 1000;
+  }
+  
+  .dark-mode-toggle:hover {
+    background: var(--toggle-hover-bg);
+  }
+  
+  /* Modal Styling */
+  .modal {
+    width: 90%;
+    max-width: 450px;
+    margin: 100px auto;
+    background: var(--modal-bg);
+    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 
+                0px 105px 63px rgba(0, 0, 0, 0.05), 
+                0px 47px 47px rgba(0, 0, 0, 0.09), 
+                0px 12px 26px rgba(0, 0, 0, 0.1);
+    border-radius: 26px;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  /* Form Styling */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Order Summary Styling */
+  .order-summary {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    background-color: var(--input-bg);
+    text-align: left;
+  }
+  
+  .order-summary h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--text-color);
+  }
+  
+  .order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: var(--text-color);
+  }
+  
+  .order-summary th,
+  .order-summary td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  .order-summary th {
+    border-bottom: 2px solid var(--border-color);
+    font-weight: 600;
+    color: var(--secondary-text-color);
+    font-size: 13px;
+    text-align: center;
+  }
+  
+  .order-summary td.item-total,
+  .order-summary td:last-child {
+    text-align: center;
+  }
+  
+  .order-summary .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  .order-summary tr td {
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .order-summary tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Total Rows Styling */
+  .order-summary .subtotal,
+  .order-summary .taxes,
+  .order-summary .total-row {
+    font-weight: 700;
+    text-align: right;
+    border-bottom: none;
+  }
+  
+  .order-summary .total-row td {
+    padding-top: 10px;
+    border-top: 2px solid var(--border-color);
+  }
+  
+  /* Quantity Input */
+  .quantity-controls .quantity {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    pointer-events: none;
+  }
+  
+  /* Custom Button Styling */
+  .custom-button {
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .custom-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.05);
+  }
+  
+  .custom-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Remove Item Button */
+  .remove-item {
+    background: none;
+    border: none;
+    color: var(--remove-btn-color);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+  }
+  
+  .remove-item:hover {
+    color: var(--remove-btn-hover-color);
+  }
+  
+  /* Discount Section */
+  .discount-section {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .discount-section input {
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--discount-input-bg);
+    font-size: 16px;
+    color: var(--text-color);
+  }
+  
+  .discount-section button {
+    padding: 12px 16px;
+    background-color: var(--toggle-bg);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+  
+  .discount-section button:hover {
+    background-color: var(--toggle-hover-bg);
+  }
+  
+  #discount-message {
+    color: #FF4D4D;
+    font-size: 13px;
+    height: 18px;
+  }
+  
+  /* Payment Options */
+  .payment--options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .payment--options button {
+    height: 55px;
+    background: var(--input-bg);
+    border-radius: 11px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+  }
+  
+  .payment--options button:hover {
+    background: #e0e0e0;
+  }
+  
+  .payment--options button img {
+    height: 24px;
+    width: auto;
+  }
+  
+  /* Separator */
+  .separator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #8B8E98;
+  }
+  
+  .separator .line {
+    flex: 1;
+    height: 1px;
+    background-color: #e8e8e8;
+  }
+  
+  /* Credit Card Form */
+  .credit-card-info--form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input_container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .split {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+  }
+  
+  .input_label {
+    font-size: 12px;
+    color: var(--secondary-text-color);
+    font-weight: 600;
+  }
+  
+  .input_field {
+    width: 100%;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 9px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    font-size: 14px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+  
+  .input_field:focus {
+    border-color: #242424;
+    background-color: #FFFFFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(36, 36, 36, 0.2);
+  }
+  
+  /* Remove spinner from number inputs */
+  .input_field::-webkit-outer-spin-button,
+  .input_field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .input_field[type=number] {
+    -moz-appearance: textfield;
+  }
+  
+  /* Checkout Button */
+  .purchase--btn {
+    height: 55px;
+    background: linear-gradient(180deg, #363636 0%, #1B1B1B 50%, #000000 100%);
+    border-radius: 11px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .purchase--btn:hover {
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px rgba(0, 0, 0, 0.24);
+  }
+  
+  .purchase--btn:focus {
+    outline: 2px solid #242424;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 500px) {
+    .payment--options {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+  
+    .purchase--btn {
+      height: 50px;
+      font-size: 14px;
+    }
+  
+    .order-summary h2 {
+      font-size: 16px;
+    }
+  
+    .order-summary table {
+      font-size: 13px;
+    }
+  
+    .order-summary th, .order-summary td {
+      padding: 6px 4px;
+    }
+  
+    .order-summary .subtotal,
+    .order-summary .taxes,
+    .order-summary .total-row {
+      font-size: 14px;
+    }
+  
+    .quantity-controls .quantity {
+      width: 25px;
+      font-size: 14px;
+    }
+  
+    .quantity-controls .custom-button {
+      width: 25px;
+      height: 25px;
+    }
+  
+    .dark-mode-toggle {
+      width: 35px;
+      height: 35px;
+      font-size: 18px;
+    }
+  }
+  

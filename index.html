@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restaurant Checkout</title>
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <!-- Dark Mode Toggle Button -->
+  <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+    🌙
+  </button>
+
+  <div class="modal">
+    <form class="form" action="#" method="POST">
+      
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <h2>Order Summary</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="order-items">
+            <tr data-price="12.99">
+              <td>Margherita Pizza</td>
+              <td>
+                <div class="quantity-controls">
+                  <!-- Decrement Button -->
+                  <div class="wrapper">
+                    <button type="button" class="custom-button decrement" aria-label="Decrease quantity">
+                      <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <!-- Minus Icon -->
+                        <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"/>
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  <!-- Quantity Input -->
+                  <input type="number" class="quantity" min="1" value="2" readonly aria-label="Quantity">
+
+                  <!-- Increment Button -->
+                  <div class="wrapper">
+                    <button type="button" class="custom-button increment" aria-label="Increase quantity">
+                      <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <!-- Plus Icon -->
+                        <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2"/>
+                        <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </td>
+              <td class="item-total">$25.98</td>
+              <td>
+                <button type="button" class="remove-item" aria-label="Remove item">✖</button>
+              </td>
+            </tr>
+            <tr data-price="8.50">
+              <td>Caesar Salad</td>
+              <td>
+                <div class="quantity-controls">
+                  <!-- Decrement Button -->
+                  <div class="wrapper">
+                    <button type="button" class="custom-button decrement" aria-label="Decrease quantity">
+                      <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <!-- Minus Icon -->
+                        <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"/>
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  <!-- Quantity Input -->
+                  <input type="number" class="quantity" min="1" value="1" readonly aria-label="Quantity">
+
+                  <!-- Increment Button -->
+                  <div class="wrapper">
+                    <button type="button" class="custom-button increment" aria-label="Increase quantity">
+                      <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <!-- Plus Icon -->
+                        <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2"/>
+                        <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </td>
+              <td class="item-total">$8.50</td>
+              <td>
+                <button type="button" class="remove-item" aria-label="Remove item">✖</button>
+              </td>
+            </tr>
+            <tr data-price="6.75">
+              <td>Chocolate Cake</td>
+              <td>
+                <div class="quantity-controls">
+                  <!-- Decrement Button -->
+                  <div class="wrapper">
+                    <button type="button" class="custom-button decrement" aria-label="Decrease quantity">
+                      <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <!-- Minus Icon -->
+                        <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"/>
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  <!-- Quantity Input -->
+                  <input type="number" class="quantity" min="1" value="3" readonly aria-label="Quantity">
+
+                  <!-- Increment Button -->
+                  <div class="wrapper">
+                    <button type="button" class="custom-button increment" aria-label="Increase quantity">
+                      <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <!-- Plus Icon -->
+                        <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2"/>
+                        <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </td>
+              <td class="item-total">$20.25</td>
+              <td>
+                <button type="button" class="remove-item" aria-label="Remove item">✖</button>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="subtotal">
+              <td colspan="2">Subtotal</td>
+              <td colspan="2" id="subtotal">$54.73</td>
+            </tr>
+            <tr class="taxes">
+              <td colspan="2">Taxes (8%)</td>
+              <td colspan="2" id="taxes">$4.38</td>
+            </tr>
+            <tr class="total-row">
+              <td colspan="2">Total</td>
+              <td colspan="2" id="total">$59.11</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <!-- Discount Code -->
+        <div class="discount-section">
+          <input type="text" id="discount-code" placeholder="Enter discount code" aria-label="Discount code">
+          <button type="button" id="apply-discount">Apply</button>
+          <p id="discount-message"></p>
+        </div>
+      </div>
+      
+      <!-- Payment Options -->
+      <div class="payment--options">
+        <!-- PayPal Button -->
+        <button name="paypal" type="button" aria-label="Pay with PayPal">
+          <!-- PayPal SVG Icon -->
+          <img src="paypal-logo.svg" alt="PayPal Logo">
+        </button>
+        
+        <!-- Apple Pay Button -->
+        <button name="apple-pay" type="button" aria-label="Pay with Apple Pay">
+          <!-- Apple Pay SVG Icon -->
+          <img src="apple-pay-logo.svg" alt="Apple Pay Logo">
+        </button>
+        
+        <!-- Google Pay Button -->
+        <button name="google-pay" type="button" aria-label="Pay with Google Pay">
+          <!-- Google Pay SVG Icon -->
+          <img src="google-pay-logo.svg" alt="Google Pay Logo">
+        </button>
+      </div>
+      
+      <!-- Separator -->
+      <div class="separator">
+        <hr class="line">
+        <p>or pay using credit card</p>
+        <hr class="line">
+      </div>
+      
+      <!-- Credit Card Information Form -->
+      <div class="credit-card-info--form">
+        <!-- Card Holder Name -->
+        <div class="input_container">
+          <label for="cardholder-name" class="input_label">Card Holder Full Name</label>
+          <input id="cardholder-name" class="input_field" type="text" name="cardholder-name" placeholder="Enter your full name" required>
+        </div>
+        
+        <!-- Card Number -->
+        <div class="input_container">
+          <label for="card-number" class="input_label">Card Number</label>
+          <input id="card-number" class="input_field" type="text" name="card-number" placeholder="0000 0000 0000 0000" maxlength="19" required>
+        </div>
+        
+        <!-- Expiry Date and CVV -->
+        <div class="input_container">
+          <label class="input_label">Expiry Date / CVV</label>
+          <div class="split">
+            <input id="expiry-date" class="input_field" type="text" name="expiry-date" placeholder="MM/YY" maxlength="5" required>
+            <input id="cvv" class="input_field" type="text" name="cvv" placeholder="CVV" maxlength="4" required>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Checkout Button -->
+      <button class="purchase--btn" type="submit">Checkout</button>
+      
+    </form>
+  </div>
+
+  <!-- Link to External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
