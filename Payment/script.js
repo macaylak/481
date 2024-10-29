@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Apply discount if any
       const discountedSubtotal = subtotal - (subtotal * discount);
   
-      // Calculate taxes (8%)
+      // Calculate taxes (5%)
       const taxes = discountedSubtotal * 0.05;
   
       // Calculate total
@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const discountCodes = {
       'DISCOUNT10': 0.10, // 10% off
       'SAVE20': 0.20,     // 20% off
-      'FREESHIP': 0.05    // 5% off
     };
   
     applyDiscountBtn.addEventListener('click', () => {

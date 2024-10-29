@@ -12,9 +12,10 @@
     --secondary-text-color: #8B8E98;
     --border-color: #e5e5e5;
     --button-bg: linear-gradient(180deg, rgb(56, 56, 56) 0%, rgb(36, 36, 36) 66%, rgb(41, 41, 41) 100%);
-    --button-hover-bg: rgb(26, 25, 25);
-    --remove-btn-color: #FF4D4D;
-    --remove-btn-hover-color: #D93636;
+    --button-hover-bg: rgb(103, 101, 101);
+    /* --remove-btn-color: #FF4D4D; */
+    --remove-btn-color: #8B8E98;
+    --remove-btn-hover-color: #8e0d0d;
     --input-bg: #F2F2F2;
     --modal-bg: #FFFFFF;
     --discount-input-bg: #FFFFFF;
@@ -120,6 +121,7 @@
     padding: 10px;
     text-align: left;
     vertical-align: middle;
+    
   }
   
   .order-summary th {
@@ -127,6 +129,10 @@
     font-weight: 600;
     color: var(--secondary-text-color);
     font-size: 13px;
+    text-align: justify;
+  }
+
+  .order-summary th:nth-child(2) {
     text-align: center;
   }
   
@@ -175,6 +181,12 @@
     color: var(--text-color);
     pointer-events: none;
   }
+
+ .-webkit-inner-spin-button,
+  .quantity::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
   
   /* Custom Button Styling */
   .custom-button {
@@ -205,8 +217,7 @@
     border: none;
     color: var(--remove-btn-color);
     cursor: pointer;
-    font-size: 16px;
-    padding: 5px;
+    font-size: 14px;
   }
   
   .remove-item:hover {
@@ -345,7 +356,7 @@
   }
   
   .input_field[type=number] {
-    -moz-appearance: textfield;
+    appearance: textfield;
   }
   
   /* Checkout Button */
