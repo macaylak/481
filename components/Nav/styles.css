@@ -1,0 +1,336 @@
+/* Nav/styles.css */
+/* CSS Reset */
+  
+  /* Root variables for themes */
+  :root {
+    --background-color: #FFFFFF;
+    --text-color: #242424;
+    --secondary-text-color: #8B8E98;
+    --border-color: #e5e5e5;
+    --button-bg: linear-gradient(180deg, rgb(56, 56, 56) 0%, rgb(36, 36, 36) 66%, rgb(41, 41, 41) 100%);
+    --button-hover-bg: rgb(26, 25, 25);
+    --remove-btn-color: #FF4D4D;
+    --remove-btn-hover-color: #D93636;
+    --input-bg: #F2F2F2;
+    --modal-bg: #FFFFFF;
+    --discount-input-bg: #FFFFFF;
+    --toggle-bg: #363636;
+    --toggle-hover-bg: #1B1B1B;
+  }
+  
+  /* Dark theme variables */
+  body.dark-mode {
+    --background-color: #1E1E1E;
+    --text-color: #FFFFFF;
+    --secondary-text-color: #A9A9A9;
+    --border-color: #444444;
+    --button-bg: linear-gradient(180deg, rgb(80, 80, 80) 0%, rgb(60, 60, 60) 66%, rgb(65, 65, 65) 100%);
+    --button-hover-bg: rgb(50, 50, 50);
+    --remove-btn-color: #FF6B6B;
+    --remove-btn-hover-color: #FF4C4C;
+    --input-bg: #333333;
+    --modal-bg: #2C2C2C;
+    --discount-input-bg: #333333;
+    --toggle-bg: #555555;
+    --toggle-hover-bg: #333333;
+  }
+  
+  /* Body Styling */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Dark Mode Toggle Button */
+  .dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s;
+    z-index: 1000;
+  }
+  
+  .dark-mode-toggle:hover {
+    background: var(--toggle-hover-bg);
+  }
+  
+  /* Modal Styling */
+  .modal {
+    width: 90%;
+    height: auto;
+    background: var(--modal-bg);
+    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 
+                0px 105px 63px rgba(0, 0, 0, 0.05), 
+                0px 47px 47px rgba(0, 0, 0, 0.09), 
+                0px 12px 26px rgba(0, 0, 0, 0.1);
+    border-radius: 26px;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  /* Form Styling */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 200px;
+    
+  }
+
+  
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+
+.background {
+  border-radius: 16px;
+  mix-blend-mode: luminosity;
+  backdrop-filter: blur(15px);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.menu__icon {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+}
+
+.menu__icon span {
+  display: block;
+  width: 100%;
+  height: 0.125rem;
+  border-radius: 2px;
+  background-color: rgb(0, 122, 255);
+  box-shadow: 0 .5px 2px 0 hsla(0, 0%, 0%, .2);
+  transition: background-color .4s;
+  position: relative;
+}
+
+.menu__icon span+span {
+  margin-top: .375rem;
+}
+
+.menu__icon span:nth-child(1) {
+  animation: ease .8s menu-icon-top-2 forwards;
+}
+
+.menu__icon span:nth-child(2) {
+  animation: ease .8s menu-icon-scaled-2 forwards;
+}
+
+.menu__icon span:nth-child(3) {
+  animation: ease .8s menu-icon-bottom-2 forwards;
+}
+
+.menu__icon:hover span:nth-child(1) {
+  animation: ease .8s menu-icon-top forwards;
+}
+
+.menu__icon:hover span:nth-child(2) {
+  animation: ease .8s menu-icon-scaled forwards;
+}
+
+.menu__icon:hover span:nth-child(3) {
+  animation: ease .8s menu-icon-bottom forwards;
+  background-color: rgb(255, 59, 48);
+}
+
+@keyframes menu-icon-top {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+
+  50% {
+    top: .5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    top: .5rem;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes menu-icon-top-2 {
+  0% {
+    top: .5rem;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    top: .5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    top: 0;
+    transform: rotate(0);
+  }
+}
+
+@keyframes menu-icon-bottom {
+  0% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+
+  50% {
+    bottom: .5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    bottom: .5rem;
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes menu-icon-bottom-2 {
+  0% {
+    bottom: .5rem;
+    transform: rotate(135deg);
+  }
+
+  50% {
+    bottom: .5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+}
+
+@keyframes menu-icon-scaled {
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes menu-icon-scaled-2 {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+  .cta {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    text-align: justify;
+  }
+  
+  .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+  
+  .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+  
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+  
+  .cta:active svg {
+    transform: scale(0.9);
+  }
+  
+  .hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+  }
+  
+  .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .menu-parts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 50px;
+}
+.menu-item {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: black;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 0;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-align: left;
+}
+
+.menu-item:hover {
+  color: #9ac2a3; /* Text color changes on hover */
+  transform: scale(1.1); /* Slightly scales the item */
+}
+
+
+
+  

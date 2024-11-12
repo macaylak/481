@@ -1,0 +1,106 @@
+<!-- /Nav/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=400px, initial-scale=1" />
+    <title>Restaurant Checkout</title>
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Dark Mode Toggle Button
+    <button
+      id="dark-mode-toggle"
+      class="dark-mode-toggle"
+      aria-label="Toggle Dark Mode"
+    >
+      🌙
+    </button>
+     -->
+
+    <!-- Modal Section -->
+    <div class="modal">
+      <div class="background">
+
+        <button class="menu__icon" onclick="closeNav()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <hr />
+      <button class="cta">
+        <span class="hover-underline-animation"> My Order </span>
+        <svg
+          id="arrow-horizontal"
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="10"
+          viewBox="0 0 46 16"
+        >
+          <path
+            id="Path_10"
+            data-name="Path 10"
+            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+            transform="translate(30)"
+          ></path>
+        </svg>
+      </button>
+      <br />
+      <button class="cta">
+        <span class="hover-underline-animation"> Menu </span>
+        <svg
+          id="arrow-horizontal"
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="10"
+          viewBox="0 0 46 16"
+        >
+          <path
+            id="Path_10"
+            data-name="Path 10"
+            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+            transform="translate(30)"
+          ></path>
+        </svg>
+      </button>
+
+      <div class="menu-parts">
+        <button class="menu-item">Breakfast</button>
+        <button class="menu-item">Lunch</button>
+        <button class="menu-item">Dinner</button>
+        <button class="menu-item">Drinks</button>
+        <button class="menu-item">Dessert</button>
+        <button class="menu-item">🍹 Happy Hour 🍔</button>
+      </div>
+
+      <button class="cta request-waitstaff">
+        <span class="hover-underline-animation">Request Waitstaff</span>
+        <svg
+          id="arrow-horizontal"
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="10"
+          viewBox="0 0 46 16"
+        >
+          <path
+            id="Path_10"
+            data-name="Path 10"
+            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+            transform="translate(30)"
+          ></path>
+        </svg>
+      </button>
+      <div class="menu-parts">
+        <button class="menu-item">Refill Beverage</button>
+        <button class="menu-item">Extra Napkins</button>
+        <button class="menu-item">Cutlery</button>
+        <button class="menu-item">Call Server</button>
+      </div>
+    </div>
+    <!-- Link to External JavaScript -->
+    <script src="../viewMenu/script.js"></script>
+  </body>
+</html>

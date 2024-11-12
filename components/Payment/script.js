@@ -172,3 +172,33 @@ document.addEventListener('DOMContentLoaded', () => {
     calculateTotals();
   });
   
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const orderItems = document.getElementById('order-items');
+
+    // Load cart from local storage
+    function loadCartForPayment() {
+        const savedCart = localStorage.getItem('orderCart');
+        if (savedCart) {
+            orderCart = JSON.parse(savedCart);
+            orderCart.forEach(item => {
+                const row = document.createElement('tr');
+                row.setAttribute('data-price', item.price);
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>
+                        <button class="decrement">-</button>
+                        <input class="quantity" type="number" value="${item.quantity}" min="1">
+                        <button class="increment">+</button>
+                    </td>
+                    <td class="item-total">${formatCurrency(item.price * item.quantity)}</td>
+                    <td><button class="remove-item">Remove</button></td>
+                `;
+                orderItems.appendChild(row);
+            });
+            calculateTotals();
+        }
+    }
+
+    loadCartForPayment();
+});

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order System</title>
+    <link rel="stylesheet" href="components/viewMenu/styles.css">
+</head>
+<body>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        
+        <!-- Breakfast Category -->
+        <section class="menu-category">
+            <div class="menu-category-header">
+                <h2>Breakfast</h2>
+            </div>
+            <div class="menu-grid">
+                
+                <!-- Pancakes -->
+                <button onclick="openOverlay('Pancakes', 'img/pancakes.jpeg', 'Fluffy pancakes served with maple syrup and butter.', 8.00, ['v'], ['Bacon', 'Sausage', 'Hashbrowns'], ['Extra Syrup', 'Extra Butter'])">
+                    <div class="menu-item">
+                        <h3>Pancakes</h3>
+                        <img src="img/pancakes.jpeg" alt="Pancakes">
+                        <p>Fluffy pancakes served with maple syrup and butter.</p>
+                        <p>$8.00</p>
+                        <h4>Add to Order</h4>
+                    </div>
+                </button>
+
+                <!-- Omelette -->
+                <button onclick="openOverlay('Omelette', 'img/omelette.jpeg', 'Fluffy omelette with your choice of fillings.', 9.00, ['gf'], ['Toast', 'Hashbrowns', 'Fruit'], ['Extra Cheese', 'Extra Fillings'])">
+                    <div class="menu-item">
+                        <h3>Omelette</h3>
+                        <img src="img/omelette.jpeg" alt="Omelette">
+                        <p>Fluffy omelette with your choice of fillings.</p>
+                        <p>$9.00</p>
+                        <h4>Add to Order</h4>
+                    </div>
+                </button>
+
+                <!-- Avocado Toast -->
+                <button onclick="openOverlay('Avocado Toast', 'img/avocadotoast.jpeg', 'Sourdough toast topped with mashed avocado and cherry tomatoes.', 7.00, ['v'], ['Egg', 'Bacon', 'Fruit'], ['Extra Avocado', 'Extra Tomatoes'])">
+                    <div class="menu-item">
+                        <h3>Avocado Toast</h3>
+                        <img src="img/avocadotoast.jpeg" alt="Avocado Toast">
+                        <p>Sourdough toast topped with mashed avocado and cherry tomatoes.</p>
+                        <p>$7.00</p>
+                        <h4>Add to Order</h4>
+                    </div>
+                </button>
+
+                <!-- View All Button -->
+                <button class="cta" onclick="viewAll('Breakfast')">
+                    <span class="hover-underline-animation">View All</span>
+                    <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                        <path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                    </svg>
+                </button>
+
+            </div>
+        </section>
+
+        <!-- Lunch Category -->
+        <section class="menu-category">
+            <div class="menu-category-header">
+                <h2>Lunch</h2>
+            </div>
+            <div class="menu-grid">
+                
+                <!-- Stuffed Mushrooms -->
+                <button onclick="openOverlay('Stuffed Mushrooms', 'img/stuffedmushrooms.jpeg', 'Mushroom caps stuffed with a blend of cream cheese and herbs.', 10.00, ['v'], ['Caesar Salad', 'Garlic Bread'], ['Extra Cheese', 'Extra Herbs'])">
+                    <div class="menu-item">
+                        <h3>Stuffed Mushrooms</h3>
+                        <img src="img/stuffedmushrooms.jpeg" alt="Stuffed Mushrooms">
+                        <p>Mushroom caps stuffed with a blend of cream cheese and herbs.</p>
+                        <p>$10.00</p>
+                        <h4>Add to Order</h4>
+                    </div>
+                </button>
+
+                <!-- Garlic Bread -->
+                <button onclick="openOverlay('Garlic Bread', 'img/garlicbread.jpeg', 'Toasted baguette with garlic butter and herbs.', 5.00, ['v'], ['Caesar Salad', 'Soup'], ['Extra Butter', 'Extra Herbs'])">
+                    <div class="menu-item">
+                        <h3>Garlic Bread</h3>
+                        <img src="img/garlicbread.jpeg" alt="Garlic Bread">
+                        <p>Toasted baguette with garlic butter and herbs.</p>
+                        <p>$5.00</p>
+                        <h4>Add to Order</h4>
+                    </div>
+                </button>
+
+                <!-- Caesar Salad -->
+                <button onclick="openOverlay('Caesar Salad', 'img/caesarsalad.jpeg', 'Romaine lettuce with croutons, parmesan cheese, and Caesar dressing.', 9.00, [], ['Breadsticks', 'Soup'], ['Extra Croutons', 'Extra Dressing'])">
+                    <div class="menu-item">
+                        <h3>Caesar Salad</h3>
+                        <img src="img/caesarsalad.jpeg" alt="Caesar Salad">
+                        <p>Romaine lettuce with croutons, parmesan cheese, and Caesar dressing.</p>
+                        <p>$9.00</p>
+                        <h4>Add to Order</h4>
+                    </div>
+                </button>
+
+                <!-- View All Button -->
+                <button class="cta" onclick="viewAll('Lunch')">
+                    <span class="hover-underline-animation">View All</span>
+                    <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                        <path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                    </svg>
+                </button>
+
+            </div>
+        </section>
+
+        <!-- Dinner Category -->
+        <section class="menu-category">
+            <div class="menu-category-header">
+            <h2>Dinner</h2>
+            </div>
+            <div class="menu-grid">
+            <!-- Spaghetti Bolognese -->
+            <button onclick="openOverlay('Spaghetti Bolognese', 'img/spaghetti.jpeg', 'Spaghetti pasta with a rich beef and tomato sauce.', 12.00, [], ['Caesar Salad', 'Garlic Bread'], ['Extra Parmesan', 'Extra Sauce'])">
+                <div class="menu-item">
+                <h3>Spaghetti Bolognese</h3>
+                <img src="img/spaghetti.jpeg" alt="Spaghetti Bolognese">
+                <p>Spaghetti pasta with a rich beef and tomato sauce.</p>
+                <p>$12.00</p>
+                <h4>Add to Order</h4>
+                </div>
+            </button>
+
+            <!-- Grilled Salmon -->
+            <button onclick="openOverlay('Grilled Salmon', 'img/salmon.jpeg', 'Fresh salmon fillet grilled to perfection with lemon and herbs.', 15.00, ['gf'], ['Caesar Salad', 'Garlic Bread'], ['Extra Lemon', 'Extra Herbs'])">
+                <div class="menu-item">
+                <h3>Grilled Salmon</h3>
+                <img src="img/salmon.jpeg" alt="Grilled Salmon">
+                <p>Fresh salmon fillet grilled to perfection with lemon and herbs.</p>
+                <p>$15.00</p>
+                <h4>Add to Order</h4>
+                </div>
+            </button>
+
+            <!-- Steak Frites -->
+            <button onclick="openOverlay('Steak Frites', 'img/steakfrites.jpeg', 'Grilled sirloin steak served with French fries and garlic butter.', 18.00, [], ['Caesar Salad', 'Garlic Bread'], ['Extra Steak Sauce', 'Extra Garlic Butter'])">
+                <div class="menu-item">
+                <h3>Steak Frites</h3>
+                <img src="img/steakfrites.jpeg" alt="Steak Frites">
+                <p>Grilled sirloin steak served with French fries and garlic butter.</p>
+                <p>$18.00</p>
+                <h4>Add to Order</h4>
+                </div>
+            </button>
+
+            <!-- View All Button -->
+            <button class="cta" onclick="viewAll('Dinner')">
+                <span class="hover-underline-animation">View All</span>
+                <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                <path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                </svg>
+            </button>
+            </div>
+        </section>
+
+        <!-- Dessert Category -->
+        <section class="menu-category">
+            <div class="menu-category-header">
+            <h2>Dessert</h2>
+            </div>
+            <div class="menu-grid">
+            <!-- Chocolate Cake -->
+            <button onclick="openOverlay('Chocolate Cake', 'img/chocolatecake.jpeg', 'Rich chocolate cake with a molten center.', 6.00, ['v'], ['Vanilla Ice Cream', 'Coffee'], ['Extra Chocolate Sauce', 'Extra Ice Cream'])">
+                <div class="menu-item">
+                <h3>Chocolate Cake</h3>
+                <img src="img/chocolatecake.jpeg" alt="Chocolate Cake">
+                <p>Rich chocolate cake with a molten center.</p>
+                <p>$6.00</p>
+                <h4>Add to Order</h4>
+                </div>
+            </button>
+
+            <!-- Cheesecake -->
+            <button onclick="openOverlay('Cheesecake', 'img/cheesecake.jpeg', 'Creamy cheesecake with a graham cracker crust.', 5.50, ['v'], ['Vanilla Ice Cream', 'Coffee'], ['Extra Whipped Cream', 'Extra Crust'])">
+                <div class="menu-item">
+                <h3>Cheesecake</h3>
+                <img src="img/cheesecake.jpeg" alt="Cheesecake">
+                <p>Creamy cheesecake with a graham cracker crust.</p>
+                <p>$5.50</p>
+                <h4>Add to Order</h4>
+                </div>
+            </button>
+
+            <!-- Sundae -->
+            <button onclick="openOverlay('Sundae', 'img/sundae.jpeg', 'Vanilla ice cream with chocolate sauce, whipped cream, and a cherry.', 4.00, ['v'], ['Coffee', 'Tea'], ['Extra Cherry', 'Extra Whipped Cream'])">
+                <div class="menu-item">
+                <h3>Sundae</h3>
+                <img src="img/sundae.jpeg" alt="Sundae">
+                <p>Vanilla ice cream with chocolate sauce, whipped cream, and a cherry.</p>
+                <p>$4.00</p>
+                <h4>Add to Order</h4>
+                </div>
+            </button>
+
+            <!-- View All Button -->
+            <button class="cta" onclick="viewAll('Dessert')">
+                <span class="hover-underline-animation">View All</span>
+                <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                <path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                </svg>
+            </button>
+            </div>
+        </section>
+
+        <!-- Drinks Category -->
+        <section class="menu-category">
+            <div class="menu-category-header">
+            <h2>Drinks</h2>
+            </div>
+            <div class="sub-cat">
+            <h3>Alcohol</h3>
+            <button class="cta" onclick="viewAll('Alcohol')">
+                <span class="hover-underline-animation">View All</span>
+                <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                <path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                </svg>
+            </button>
+            </div>
+            <div class="menu-grid">
+            <!-- Beer -->
+            <div class="menu-item">
+                <h3>Beer</h3>
+                <img src="img/beer.jpeg" alt="Beer">
+                <p>$5.00</p>
+                <p>Choose from a selection of local and imported beers.</p>
+                <button onclick="addToOrder('Beer', 5.00)">Add to Order</button>
+            </div>
+            <!-- Red Wine -->
+            <div class="menu-item">
+                <h3>Red Wine</h3>
+                <img src="img/redwine.jpeg" alt="Red Wine">
+                <p>$7.00</p>
+                <p>Rich and full-bodied red wine from the vineyards of Italy.</p>
+                <button onclick="addToOrder('Red Wine', 7.00)">Add to Order</button>
+            </div>
+            <!-- White Wine -->
+            <div class="menu-item">
+                <h3>White Wine</h3>
+                <img src="img/whitewine.jpeg" alt="White Wine">
+                <p>$7.00</p>
+                <p>Crisp and refreshing white wine from the vineyards of France.</p>
+                <button onclick="addToOrder('White Wine', 7.00)">Add to Order</button>
+            </div>
+            <!-- Margarita -->
+            <div class="menu-item">
+                <h3>Margarita</h3>
+                <img src="img/margarita.jpeg" alt="Margarita">
+                <p>$8.00</p>
+                <p>Tequila, lime juice, and triple sec served with a salted rim.</p>
+                <button onclick="addToOrder('Margarita', 8.00)">Add to Order</button>
+            </div>
+            <!-- Mojito -->
+            <div class="menu-item">
+                <h3>Mojito</h3>
+                <img src="img/mojito.jpeg" alt="Mojito">
+                <p>$8.00</p>
+                <p>White rum, lime juice, and mint served over ice.</p>
+                <button onclick="addToOrder('Mojito', 8.00)">Add to Order</button>
+            </div>
+            </div>
+            <div class="sub-cat">
+            <h3>Spirit Free</h3>
+            <button class="cta" onclick="viewAll('Spirit Free')">
+                <span class="hover-underline-animation">View All</span>
+                <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                <path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                </svg>
+            </button>
+            </div>
+            <div class="menu-grid">
+            <!-- Iced Tea -->
+            <div class="menu-item">
+                <h3>Iced Tea</h3>
+                <img src="img/icedtea.jpeg" alt="Iced Tea">
+                <p>$2.50</p>
+                <p>Refreshing iced tea made with freshly brewed tea leaves.</p>
+                <button onclick="addToOrder('Iced Tea', 2.50)">Add to Order</button>
+            </div>
+            <!-- Lemonade -->
+            <div class="menu-item">
+                <h3>Lemonade</h3>
+                <img src="img/lemonade.jpeg" alt="Lemonade">
+                <p>$3.00</p>
+                <p>Sweet and tangy lemonade made with fresh lemons and sugar.</p>
+                <button onclick="addToOrder('Lemonade', 3.00)">Add to Order</button>
+            </div>
+            <!-- Smoothie -->
+            <div class="menu-item">
+                <h3>Smoothie</h3>
+                <img src="img/smoothie.jpeg" alt="Smoothie">
+                <p>$4.00</p>
+                <p>Healthy and delicious smoothie made with fresh fruit and yogurt.</p>
+                <button onclick="addToOrder('Smoothie', 4.00)">Add to Order</button>
+            </div>
+            </div>
+        </section></svg></button></svg>
+
+    </section>
+</body>
+</html>
+
+
+  
